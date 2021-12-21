@@ -1,0 +1,28 @@
+--For this list of queries, you'll need the test  Database
+
+SELECT * FROM sale;
+SELECT * FROM item;
+SELECT * FROM customer;
+SELECT s.id AS sale, i.name as ITEM
+;
+
+
+SELECT s.id AS sale, i.name, s.price
+    FROM sale AS s
+    JOIN item AS i ON s.item_id=i.id
+    ;
+    
+--item Name, item Description and sale ID.
+SELECT s.id, i.name AS item, s.price, i.description
+    FROM sale AS s
+    JOIN item AS i ON item_id=i.id            --Since item_id is unique in both tables, we will not need to use an 's.' behind item_id.
+    ;
+    
+
+--Relating multiple tables
+
+SELECT c.name AS Cust, c.zip, i.name AS Item, i.description, s.quantity AS Quan, s.price AS Price
+    FROM sale AS s
+    JOIN item AS i ON s.item_id=i.id
+    JOIN customer AS c ON  customer_id=c.id
+    ;

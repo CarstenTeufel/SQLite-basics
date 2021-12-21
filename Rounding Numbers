@@ -1,0 +1,12 @@
+SELECT 1 / 2; --Since all values are integers, the result will be an integer. This can be fixed as the following example tells
+SELECT 1.0 / 2;
+SELECT CAST (1 AS REAL) / 2; --Casting the operand as a Real number
+SELECT 17 / 5;
+SELECT 17 / 5, 17 % 5; --The percent sign will show the reminder of the division that does not end up in a integer, in this case 2.
+
+
+
+SELECT 2.55555;
+SELECT ROUND (2.55555);
+SELECT ROUND (2.55555, 3); --Rounded to the third  value
+SELECT ROUND (2.5555, 0);

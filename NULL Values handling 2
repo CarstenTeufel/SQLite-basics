@@ -1,0 +1,68 @@
+DROP TABLE test;
+CREATE TABLE test (
+ a INTEGER NOT NULL,
+ b TEXT NOT NULL,
+ c TEXT
+);
+
+INSERT INTO test (b, c) VALUES ('one', 'two'); -- This will generate an error, since a is specifically set as NOT NULL
+SELECT * FROM test;
+
+INSERT INTO test (a,b) VALUES (
+'this', 'that');
+
+SELECT * FROM test;
+
+
+
+DROP TABLE IF EXISTS test;
+
+CREATE TABLE test (
+ a INTEGER NOT NULL,
+ b TEXT NOT NULL,
+ c TEXT);
+ 
+INSERT INTO test (a, b) VALUES ('one', 'two');
+
+SELECT * FROM test;
+ 
+--Same table, but with c is NOT NULL instead of a
+
+DROP TABLE IF EXISTS test;
+
+CREATE TABLE test (
+ a INTEGER,
+ b TEXT NOT NULL,
+ c TEXT NOT NULL);
+ 
+INSERT INTO test (a, b) VALUES ('one', 'two'); --Error message. c shall not be NULL.
+
+SELECT * FROM test;
+
+--Now we will create a table with a default text everytime a record is added.
+
+DROP TABLE IF EXISTS test;
+
+CREATE TABLE test (
+ a TEXT UNIQUE, --No a value can be the same.
+ b INTEGER NOT NULL,
+ c TEXT DEFAULT 'SQL' --We've created a default value for every row or record here
+ );
+ 
+INSERT INTO test (a, b) VALUES ('Mic', 'Check');
+
+SELECT * FROM test;
+
+INSERT INTO test (a, b) VALUES ('Mic', 'Check'); --This will create an error, as a should be unique.
+
+
+--As NULL is not a value, it does not fall into the UNIQUE constraint error.
+INSERT INTO test (a, b, C) VALUES (NULL,2 ,'SQL');
+
+SELECT * FROM test;
+
+INSERT INTO test (a, b, C) VALUES (NULL,2 ,'SQL');
+
+SELECT * FROM test;
+
+

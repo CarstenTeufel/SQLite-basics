@@ -1,0 +1,14 @@
+SELECT * FROM test; 
+
+SELECT * FROM test WHERE  a = NULL; --As NULL is the abscense of a value, you will get no results from a record or row from a normal condition, because it is not a value, even when there are NULL values in the tables.
+--Therefore, we will need a special condition
+SELECT * FROM test WHERE a IS NOT NULL;
+
+INSERT INTO test (a, b, c) VALUES(0, NULL, '');
+
+SELECT * FROM test;
+
+SELECT * FROM test WHERE b IS NULL;
+
+SELECT * FROM test WHERE c IS NULL;
+

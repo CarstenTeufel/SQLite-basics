@@ -1,0 +1,5 @@
+SELECT 'StRiNg' = 'string'; --0 means False, because they're not equivalent
+SELECT LOWER('StRiNg') = LOWER('string'); --True, because we made them all lower-case
+SELECT UPPER('StRiNg') = UPPER('string'); --True too, they're all upper case
+SELECT UPPER(Name) FROM City ORDER BY Name;
+SELECT LOWER(Name) FROM City ORDER BY Name;

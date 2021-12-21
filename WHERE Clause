@@ -1,0 +1,38 @@
+SELECT * FROM Country;
+
+
+SELECT Name, Continent, Population FROM Country
+    WHERE Population <100000 OR Population IS NULL ORDER BY Population DESC; --Or operator includes rows that contain both values
+    
+
+
+SELECT Name, Continent, Population FROM Country 
+    WHERE Continent ='North America' AND Population> 100000 ORDER BY Population DESC; --AND operator dictates there must include both values.
+    
+
+--LIKE operator will help you find records in the table that contain the words next to it
+
+SELECT Name, Continent, Population FROM Country
+    WHERE Name LIKE '%island%' ORDER BY Name;                    --The percent sign(%) is a wildcard that dictates to look for any coincident string, even when it is in the middle or in upper or lower case.
+    
+
+
+SELECT Name, Continent, Population FROM Country
+    WHERE Name LIKE '%island' ORDER BY Name;                    --Let's check how the % works. If I remove the last one, you will get the country names that are equal to the word Island itself, with nothing else after the word. As the percent sign is  
+                                                                -- before the first letter, any country with anything before Island will be considered
+                                                                
+
+
+SELECT Name, Continent, Population FROM Country                --Since no country starts with the word Island, no results will be obtained if we take the first percent sign.
+    WHERE Name LIKE 'island%' ORDER BY Name;                                                                                   
+    
+
+--If our goal is to receive as result all the countries which its second letter is A, we can use an underscore and then the percent sign
+
+SELECT Name, Continent, Population FROM Country
+    WHERE Name like '_a%' ORDER BY Name ASC;
+    
+--The IN operator will select results that match the value in the list.
+
+SELECT Name, Continent, Population FROM Country
+    WHERE Continent IN ('North America', 'Asia') ORDER BY Name;

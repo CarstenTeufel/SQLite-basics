@@ -1,0 +1,9 @@
+SELECT Name FROM Country;
+SELECT Name FROM Country ORDER BY Name;
+SELECT Name FROM Country ORDER BY Name ASC;
+SELECT Name FROM Country ORDER BY Name DESC;
+
+SELECT Name, Continent FROM Country ORDER BY Continent, Name;             --This will order by continent first, then by Country
+
+SELECT Name, Continent, Region FROM Country ORDER BY Continent DESC, Region, Name;
+

@@ -1,0 +1,51 @@
+SELECT 'Hello, World' AS Result; 
+
+
+SELECT * FROM Country;
+
+SELECT * FROM Country ORDER BY Name; --Ordering by name
+
+--To get only two columns of the whole database, we do as follows
+
+SELECT Name, LifeExpectancy FROM Country ORDER BY Name;
+
+--As LifeExpectancy does not contain a space, we will obtain a different column name with an Alias. To add an alias, we do this:
+
+SELECT Name, LifeExpectancy AS "Life Expectancy" FROM Country ORDER BY Name; --Mind the double quotes. As the alias has a space between, you will need the quotes. Without the space, it'll not run, as the code thinks it's two different strings. Single quotes is for literal strings
+
+--To select rows from a table, we use the WHERE statement. In this case, we want all the rows with Europe in Continent
+
+SELECT Name, Continent, Region FROM Country;
+
+SELECT Name, Continent, Region FROM Country WHERE Continent ='Europe';
+
+--To order it, we can use the ORDER clause. We will use the Limit Clause too, to limit results (first 5 rows)
+
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5;
+
+--If I want the next 5, we use OFFSET
+
+SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe' ORDER BY Name LIMIT 5 OFFSET 5; --These clauses need to be in a specific order. Most of them wont work in their specific order.
+
+
+-- To select specific columns
+
+SELECT * FROM Country; --All columns
+
+SELECT Name, Continent, Region FROM Country -- Specific Columns
+
+SELECT Name AS Country, Region, Continent; -- The same as before, but with Name as 'Country' and Continent before Region
+
+-- To count rows
+
+SELECT COUNT(*) FROM Country;
+
+SELECT COUNT (*) FROM Country WHERE Population > 1000000;
+
+
+SELECT COUNT (*) FROM Country WHERE Population > 1000000 AND Continent='Europe'; --The asterisks tells to count all of the rows
+
+SELECT COUNT(LifeExpectancy) FROM Country; --This will only count where LifeExpectancy has data.
+
+
+

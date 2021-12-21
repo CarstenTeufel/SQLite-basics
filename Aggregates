@@ -1,0 +1,14 @@
+SELECT COUNT(*) FROM Country;
+
+SELECT Region, COUNT(*)
+    FROM Country
+    GROUP BY Region
+;
+
+SELECT Name, COUNT(*) AS Count
+    FROM Country
+    GROUP BY Region
+    ORDER BY Count DESC
+;
+
+SELECT * FROM Country;

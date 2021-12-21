@@ -1,0 +1,31 @@
+--This are conditional expressions. They return values given conditions you impose.
+
+DROP TABLE IF EXISTS booltest;
+CREATE TABLE booltest (a INTEGER, b INTEGER);
+INSERT INTO booltest VALUES (1, 0);               --Note: Standard SQL considers every 0 as 'false' and every other that's not 0 as 'true'
+SELECT * FROM booltest;
+
+SELECT
+    CASE WHEN a THEN 'true' ELSE 'false' END
+                                             as boolA,
+                                             
+     CASE WHEN b THEN 'true' ELSE 'false' END
+                                              as boolB
+      FROM booltest
+;
+
+
+--Thes
+
+DROP TABLE IF EXISTS booltest;
+CREATE TABLE booltest (a INTEGER, b INTEGER);
+INSERT INTO booltest VALUES (1, 0);               --Note: Standard SQL considers every 0 as 'false' and every other that's not 0 as 'true'
+SELECT * FROM booltest;
+
+
+SELECT
+    CASE a WHEN 1 THEN 'true' ELSE 'false'
+                                            as boolA,
+    CASE b WHEN 1 THEN 'true' ELSE 'false' as boolB
+    FROM booltest
+;

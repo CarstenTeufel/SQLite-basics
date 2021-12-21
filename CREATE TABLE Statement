@@ -1,0 +1,13 @@
+CREATE TABLE test (
+    a INTEGER,
+    b TEXT
+);
+
+INSERT INTO test VALUES (1, 'a');
+INSERT INTO test VALUES(2, 'b');
+INSERT INTO test VALUES(3, 'c');
+SELECT * FROM test;
+
+INSERT INTO test VALUES (4,'d');
+DELETE FROM test WHERE a='4'
+SELECT * FROM test

@@ -1,0 +1,7 @@
+SELECT * FROM customer;
+
+UPDATE customer SET address='123 Music Avenue', zip='98056' WHERE id=5; --To add more information about the client or change it
+
+UPDATE customer SET address='2503 S Washington St', zip='98056' WHERE id=5;
+
+UPDATE customer SET address=NULL, zip=NULL WHERE id=5;

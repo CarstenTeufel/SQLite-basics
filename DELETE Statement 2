@@ -1,0 +1,3 @@
+SELECT * FROM test;
+
+DELETE FROM test WHERE  a= 1;

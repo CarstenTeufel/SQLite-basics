@@ -1,0 +1,6 @@
+SELECT TRIM('   string   '); -- this will remove all spaces
+SELECT LTRIM('   string   '); -- this will remove left spaces
+SELECT RTRIM('   string   '); --and the right spaces
+SELECT TRIM('...String...', '.'); --This is a special way of removing certain characters you'd like to remove. In this case, dots.
+
+SELECT LTRIM('...String...', '.');

@@ -1,0 +1,22 @@
+--This syntax applies to SQLite. Another system used may vary from this method.
+
+DROP TABLE IF EXISTS test;
+
+CREATE TABLE test (
+    id INTEGER PRIMARY KEY, --This line creates an unique ID for every row or record added.
+    a INTEGER,
+    b TEXT
+);
+
+SELECT * FROM test;
+
+INSERT INTO test (a, b) VALUES (10, 'a');
+INSERT INTO test (a, b) VALUES (11, 'b');
+INSERT INTO test (a, b) VALUES (12, 'c');
+
+SELECT * FROM test;
+
+
+INSERT INTO test (a, b) VALUES (13, 'd'); --As you can see, the id column populates itself.
+
+SELECT * FROM test;

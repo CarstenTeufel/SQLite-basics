@@ -1,0 +1,18 @@
+SELECT SUBSTR('this string', 6);     -- Get from the sixth value of the string in the input
+
+SELECT SUBSTR('this string', 6, 3);        --From the sixth string, the first three numbers
+
+
+SELECT released FROM album ORDER BY released; --Say, we want only the release year of the album 
+
+
+SELECT SUBSTR('in the name of justice', 7);
+
+SELECT SUBSTR('This is anotha test', 3);
+
+SELECT released,
+    SUBSTR(released, 1, 4)AS Year,
+    SUBSTR(released, 6, 2) AS Month,
+    SUBSTR(released, 9, 2) AS Day
+    FROM album ORDER BY released
+    ;

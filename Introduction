@@ -1,0 +1,24 @@
+--The following codes should be run in the same order they appear in the sheet bar bellow.
+
+
+SELECT * FROM Country WHERE Continent = 'Europe';
+SELECT * FROM customer;
+
+INSERT INTO Customer (name, city, state)
+    VALUES('Jimi Hendrix', 'Renton', 'WA');
+    
+UPDATE customer
+    SET
+        address ='123 Music Avenue',
+        zip = '98056'
+    WHERE id= 4;
+    
+SELECT * FROM customer;
+
+
+DELETE FROM customer WHERE id = 5; 
+    
+
+SELECT * FROM customer;
+
+

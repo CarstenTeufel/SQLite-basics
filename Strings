@@ -1,0 +1,12 @@
+-- world database for this excercise
+
+SELECT LENGTH ('string'); --This will return a number that represents the length of the string
+
+
+SELECT Name, LENGTH(Name) AS Len FROM City ORDER BY Len DESC, Name;         --City, City name length as Len from City, ordered in descending order by City, then name
+
+
+SELECT Name, LENGTH(Name) AS Len FROM City ORDER BY Len DESC, Name;
+
+
+SELECT LENGTH(Name) AS Len FROM City ORDER BY Len DESC;

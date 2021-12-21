@@ -1,0 +1,5 @@
+SELECT Continent FROM country;
+
+    --To remove all duplicates, use the SELECT DISTINCT statement
+    
+SELECT DISTINCT Continent FROM country;             --The result here are seven continents.

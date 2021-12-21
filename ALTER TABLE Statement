@@ -1,0 +1,25 @@
+DROP TABLE IF EXISTS test;
+
+CREATE TABLE test (a TEXT, b TEXT, c Text);         -- We will now create a simple table
+
+INSERT INTO test VALUES ('one', 'two', 'three');
+INSERT INTO test VALUES ('four', 'five', 'six');
+INSERT INTO test VALUES ('seven', 'eight', 'nine');
+
+SELECT * FROM test;
+  
+-- Say you want to add a new column intoto the table.
+
+ALTER TABLE test ADD d TEXT;
+
+SELECT * FROM test;
+
+--Little excercise for myself: Add a new col with a default value.
+
+ALTER TABLE test ADD e TEXT DEFAULT 'Another one bites the dust-ah';
+
+SELECT e FROM TEST;
+
+--To delete a Column, use the DROP statement. 
+
+ALTER TABLE test DROP e;
